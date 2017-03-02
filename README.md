@@ -55,6 +55,7 @@ Enable :
 [1]: https://ressources.data.sncf.com/explore/dataset/api-temps-reel-transilien/
 [2]: https://www.python.org/downloads/
 [3]: https://play.google.com/store/apps/details?id=eu.apksoft.android.smsgateway&hl=fr
+[4]: http://transilien-domoticz.readthedocs.io/
 
 Tests
 -------------
@@ -63,7 +64,7 @@ Execution :  (In advance, be sure to have filled the configuration file.)
 
     ./tests.sh
     
-Documentation
+[Documentation][4]
 -------------
 
     virtualenv --python=python3.5 .venv
