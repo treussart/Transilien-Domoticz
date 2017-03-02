@@ -155,6 +155,3 @@ texinfo_documents = [
      author, 'transilien', 'One line description of project.',
      'Miscellaneous'),
 ]
-
-coverage_c_path = [os.path.abspath('..') + '/.coverage',]
-coverage_write_headline = True
