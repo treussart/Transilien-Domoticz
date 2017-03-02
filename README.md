@@ -4,6 +4,8 @@ Transilien-Domoticz
 ![Licence](https://img.shields.io/packagist/l/doctrine/orm.svg)
 [![Code Health](https://landscape.io/github/matleses/Transilien-Domoticz/master/landscape.svg?style=flat)](https://landscape.io/github/matleses/Transilien-Domoticz/master)
 [![Coverage Status](https://coveralls.io/repos/github/matleses/Transilien-Domoticz/badge.svg?branch=master)](https://coveralls.io/github/matleses/Transilien-Domoticz?branch=master)
+[![Documentation Status](https://readthedocs.org/projects/transilien-domoticz/badge/?version=latest)](http://transilien-domoticz.readthedocs.io/en/latest/?badge=latest)
+
 
 Status | Operating system
 ------------ | -------------
