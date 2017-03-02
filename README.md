@@ -2,14 +2,12 @@ Transilien-Domoticz
 ===================
 
 ![Licence](https://img.shields.io/packagist/l/doctrine/orm.svg)
-[![Code Health](https://landscape.io/github/matleses/transilien-python/master/landscape.svg?style=flat)](https://landscape.io/github/matleses/transilien-python/master)
-[![Coverage Status](https://coveralls.io/repos/github/matleses/transilien-python/badge.png?branch=master)](https://coveralls.io/github/matleses/transilien-python?branch=master)
+[![Code Health](https://landscape.io/github/matleses/Transilien-Domoticz/master/landscape.svg?style=flat)](https://landscape.io/github/matleses/Transilien-Domoticz/master)
+[![Coverage Status](https://coveralls.io/repos/github/matleses/Transilien-Domoticz/badge.svg?branch=master)](https://coveralls.io/github/matleses/Transilien-Domoticz?branch=master)
 
 Status | Operating system
 ------------ | -------------
-![Build Status](https://travis-ci.org/matleses/transilien-python.png?branch=master "Linux Build Status") | Linux x86_64
-
-
+[![Build Status](https://travis-ci.org/matleses/Transilien-Domoticz.svg?branch=master)](https://travis-ci.org/matleses/Transilien-Domoticz) | Linux x86_64 
 
 
 Hey! You want to get the french train schedules and its states, you are in the good place !

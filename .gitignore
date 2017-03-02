@@ -8,4 +8,4 @@ htmlcov/
 _build
 _static
 _templates
-
+/conf.cfg
