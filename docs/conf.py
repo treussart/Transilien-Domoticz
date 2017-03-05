@@ -169,3 +169,6 @@ html_theme_options = {
 }
 
 suppress_warnings = ['image.nonlocal_uri']
+
+# Warn about all references where the target cannot be found
+nitpicky = False

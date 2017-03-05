@@ -57,7 +57,7 @@ def format_content(nbr_trains, content, name_station):
     """Format the data provided by the SNCF API.
 
     :param nbr_trains: Number of trains to format.
-    :type nbr_trains: str
+    :type nbr_trains: int
 
     :param content: Data provided by the SNCF API (XML).
     :type content: str
