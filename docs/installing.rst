@@ -13,6 +13,24 @@ Put your configuration in the file “conf.cfg”.
 
     Located in : [Path]/site-packages/Transilien_Domoticz/conf.cfg
 
+
+Test :
+::
+
+   transilien --v
+
+If error = ImportError: No module named parse => Use Python3, not Python2.
+
+For example :
+::
+
+   cd ~/
+   virtualenv --python=python3.5 .venv
+   source .venv/bin/activate
+   pip install Transilien-Domoticz
+   nano [path]/site-packages/Transilien_Domoticz/conf.cfg
+   transilien --v
+
 Edit the cron, example :
 
 ::
@@ -23,8 +41,9 @@ Add :
 
 ::
 
-    */5 06-09 * * 1-5 transilien --sendSMS --alert
-    */5 * * * * transilien
+    SHELL=/bin/bash
+    */5 06-09 * * 1-5 source [/path/to/virtualenv/]bin/activate && transilien --sendSMS --alert
+    */5 * * * * source [/path/to/virtualenv/]bin/activate && transilien
 
 **Via Git**
 
