@@ -9,7 +9,7 @@ language: python
 
 python:
   - "3.5"
-  - pypy
+  - pypy3
 
 os:
   - linux
@@ -20,8 +20,8 @@ branches:
 
 # command to install dependencies
 install:
-  - pip install -r test-requirements.txt
-  - pip install -r doc-requirements.txt
+  - pip3 install -r test-requirements.txt
+  - pip3 install -r doc-requirements.txt
 
 before_script:
   - export PYTHONPATH=$PYTHONPATH:$(pwd)
@@ -33,4 +33,4 @@ script:
   - mkdir _static
   - mkdir _build
   - mkdir _templates
-  - sphinx-build -W -b html -d _build/doctrees . _build/html
+  - sphinx-build -b html -d _build/doctrees . _build/html
