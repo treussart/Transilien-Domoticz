@@ -1,7 +1,7 @@
 
 transilien.py
 =============
-.. automodule:: transilien
+.. automodule:: Transilien_Domoticz.transilien
     :members:
     :special-members:
     :inherited-members:

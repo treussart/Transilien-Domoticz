@@ -3,7 +3,7 @@ import sys
 import warnings
 
 
-if not (3) <= sys.version_info:
+if not (3) <= sys.version_info[0]:
     sys.exit(
         'ERROR: Transilien-Domoticz requires Python 3, but found %s.' %
         platform.python_version())

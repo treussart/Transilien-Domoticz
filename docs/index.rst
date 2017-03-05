@@ -4,7 +4,7 @@ Transilien-Domoticz
 
 :Last Reviewed: 2017-03-04
 
-This guide is maintained on `github <https://github.com/matleses/Transilien-Domoticz>`_.
+This guide is maintained on `github <https://github.com/matleses/Transilien-Domoticz/tree/master/docs>`_.
 
 
 |Licence| |Code Health| |Coverage Status| |Documentation Status|

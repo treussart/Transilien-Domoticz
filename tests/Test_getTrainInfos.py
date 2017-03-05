@@ -4,10 +4,10 @@ import unittest
 import os
 import configparser
 from lxml import etree
-from transilien import get_train_infos
+from Transilien_Domoticz.transilien import get_train_infos
 
 config_name = "conf.cfg"
-config_file = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir)) + "/" + config_name
+config_file = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir)) + "/Transilien_Domoticz/" + config_name
 config = configparser.ConfigParser()
 config.read(config_file)
 login = config["api"]["login"]

@@ -4,10 +4,10 @@ import unittest
 import json
 import os
 import configparser
-from transilien import send_text_to_domoticz, format_content
+from Transilien_Domoticz.transilien import send_text_to_domoticz, format_content
 
 config_name = "conf.cfg"
-config_file = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir)) + "/" + config_name
+config_file = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir)) + "/Transilien_Domoticz/" + config_name
 config = configparser.ConfigParser()
 config.read(config_file)
 nbr_trains = 2

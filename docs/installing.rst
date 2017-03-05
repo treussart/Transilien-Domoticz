@@ -1,4 +1,3 @@
-
 Installation
 ------------
 
@@ -8,7 +7,7 @@ Installation
 
     pip install Transilien-Domoticz
 
-Put your configuration in the file "conf.cfg".
+Put your configuration in the file “conf.cfg”.
 
 ::
 
@@ -19,6 +18,7 @@ Edit the cron, example :
 ::
 
     crontab -e
+
 Add :
 
 ::
@@ -32,11 +32,11 @@ Add :
 
     git clone https://github.com/matleses/Transilien-Domoticz.git
 
-Put your configuration in the file "conf.cfg".
+Put your configuration in the file “conf.cfg”.
 
 ::
 
-    nano Transilien-Domoticz/conf.cfg
+    nano Transilien-Domoticz/Transilien_Domoticz/conf.cfg
 
 Edit the cron, example :
 
@@ -45,10 +45,11 @@ Edit the cron, example :
     crontab -e
 
 Add :
+
 ::
 
-    */5 06-09 * * 1-5 [Path]/Transilien-Domoticz/transilien.py --sendSMS --alert
-    */5 * * * * [Path]/Transilien_Domoticz/transilien.py
+    */5 06-09 * * 1-5 [Path]/Transilien-Domoticz/Transilien_Domoticz/transilien.py --sendSMS --alert
+    */5 * * * * [Path]/Transilien-Domoticz/Transilien_Domoticz/transilien.py
 
 **In Domoticz**
 
@@ -59,9 +60,7 @@ Create two Virtual Sensors in Domoticz :
 
 **For sending SMS :**
 
-Install `SMS
-Gateway <https://play.google.com/store/apps/details?id=eu.apksoft.android.smsgateway&hl=fr>`__
-(APK Soft) on your cellphone.
+Install `SMS Gateway`_ (APK Soft) on your cellphone.
 
 Enable :
 
@@ -80,18 +79,17 @@ Execution : (In advance, be sure to have filled the configuration file.)
     cd Transilien-Domoticz
     ./tests.sh
 
-Documentation
--------------
+`Documentation`_
+----------------
 
 ::
 
-    virtualenv --python=python3.5 .venv
-    source .venv/bin/activate
     git clone https://github.com/matleses/Transilien-Domoticz.git
     cd Transilien-Domoticz
-    pip3 install -r requirements.txt
-    cd docs
-    make html
+    ./docs.sh
+
+You can open with your Web browser the file : docs/_build/html/index.html
+
 
 Usage
 -----
@@ -115,14 +113,6 @@ Usage
        --alert               check if trains have state
        --v                   verbose
 
-.. |Licence| image:: https://img.shields.io/packagist/l/doctrine/orm.svg
-.. |Code Health| image:: https://landscape.io/github/matleses/Transilien-Domoticz/master/landscape.svg?style=flat
-   :target: https://landscape.io/github/matleses/Transilien-Domoticz/master
-.. |Coverage Status| image:: https://coveralls.io/repos/github/matleses/Transilien-Domoticz/badge.svg?branch=master
-   :target: https://coveralls.io/github/matleses/Transilien-Domoticz?branch=master
-.. |Documentation Status| image:: https://readthedocs.org/projects/transilien-domoticz/badge/?version=latest
-   :target: http://transilien-domoticz.readthedocs.io/?badge=latest
-.. |Build Status| image:: https://travis-ci.org/matleses/Transilien-Domoticz.svg?branch=master
-   :target: https://travis-ci.org/matleses/Transilien-Domoticz
 
-
+.. _SMS Gateway: https://play.google.com/store/apps/details?id=eu.apksoft.android.smsgateway&hl=fr
+.. _Documentation: http://transilien-domoticz.readthedocs.io/

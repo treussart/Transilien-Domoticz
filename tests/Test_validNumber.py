@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # coding: utf8
 import unittest
-from transilien import valid_number
+from Transilien_Domoticz.transilien import valid_number
 
 
 class TestValidNumber(unittest.TestCase):
