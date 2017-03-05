@@ -1,0 +1,12 @@
+.coverage
+.coveralls.yml
+.idea/
+.venv/
+__pycache__/
+coverage.json
+htmlcov/
+_build
+_static
+_templates
+/Transilien_Domoticz/conf.cfg
+

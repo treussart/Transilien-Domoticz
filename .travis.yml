@@ -1,0 +1,29 @@
+notifications:
+  email:
+    recipients:
+      - matleses0@gmail.com
+    on_success: change # default: change
+    on_failure: always # default: always
+
+language: python
+
+python:
+  - "3.5"
+  - pypy3
+
+os:
+  - linux
+
+branches:
+  only:
+    - master
+
+# command to install dependencies
+install: pip3 install -r requirements.txt
+
+before_script:
+  - export PYTHONPATH=$PYTHONPATH:$(pwd)
+
+# command to run tests
+script:
+  - flake8 .
