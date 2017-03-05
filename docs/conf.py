@@ -172,3 +172,4 @@ suppress_warnings = ['image.nonlocal_uri']
 
 # Warn about all references where the target cannot be found
 nitpicky = False
+intersphinx_mapping = {'http://docs.python.org/3': None}
