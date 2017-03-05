@@ -30,4 +30,4 @@ before_script:
 script:
   - flake8 .
   - cd docs
-  - make html
+  - sphinx-build -nW -b html -d _build/doctrees . _build/html
