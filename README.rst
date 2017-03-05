@@ -15,7 +15,7 @@ Well, you are in the right place now! Here is what you need to do:
 
 If you have a SMS gateway, you can send SMS.
 
-:warning:
+|warning|
 
 It’s possible that for a train that has just been cancelled, the API may
 not display such a removed/cancelled train in the XML, and that no alert
@@ -160,3 +160,5 @@ Usage :
    :target: http://transilien-domoticz.readthedocs.io/?badge=latest
 .. |Build Status| image:: https://travis-ci.org/matleses/Transilien-Domoticz.svg?branch=master
    :target: https://travis-ci.org/matleses/Transilien-Domoticz
+.. |warning| image:: https://cdn2.iconfinder.com/data/icons/freecns-cumulus/32/519791-101_Warning-128.png
+   :target: https://cdn2.iconfinder.com/data/icons/freecns-cumulus/32/519791-101_Warning-128.png
