@@ -31,97 +31,8 @@ Requirements
 -  (Optional) A cellphone with an IP fix, connected via WIFI (SMS
    Gateway).
 
-Installation
-------------
 
-**Via PIP**
-
-::
-
-    pip install Transilien-Domoticz
-
-Put your configuration in the file “conf.cfg”.
-
-::
-
-    Located in : [Path]/site-packages/Transilien_Domoticz/conf.cfg
-
-Edit the cron, example :
-
-::
-
-    crontab -e
-
-Add :
-
-::
-
-    */5 06-09 * * 1-5 transilien --sendSMS --alert
-    */5 * * * * transilien
-
-**Via Git**
-
-::
-
-    git clone https://github.com/matleses/Transilien-Domoticz.git
-
-Put your configuration in the file “conf.cfg”.
-
-::
-
-    nano Transilien-Domoticz/Transilien_Domoticz/conf.cfg
-
-Edit the cron, example :
-
-::
-
-    crontab -e
-
-Add :
-
-::
-
-    */5 06-09 * * 1-5 [Path]/Transilien-Domoticz/Transilien_Domoticz/transilien.py --sendSMS --alert
-    */5 * * * * [Path]/Transilien-Domoticz/Transilien_Domoticz/transilien.py
-
-**In Domoticz**
-
-Create two Virtual Sensors in Domoticz :
-
-- a subType Text for next trains.
-- a subType Alert for the status of the trains.
-
-**For sending SMS :**
-
-Install `SMS Gateway`_ (APK Soft) on your cellphone.
-
-Enable :
-
-- Listen for HTTP send SMS commands
-- Prevent CPU sleep mode
-- Start gateway automatically after phone boot
-
-Tests
------
-
-Execution : (In advance, be sure to have filled the configuration file.)
-
-::
-
-    git clone https://github.com/matleses/Transilien-Domoticz.git
-    cd Transilien-Domoticz
-    ./tests.sh
-
-`Documentation`_
-----------------
-
-::
-
-    git clone https://github.com/matleses/Transilien-Domoticz.git
-    cd Transilien-Domoticz
-    ./docs.sh
-
-You can open with your Web browser the file : docs/_build/html/index.html
+Read the documentation on `http://transilien-domoticz.readthedocs.io/ <http://transilien-domoticz.readthedocs.io/>`_.
 
 Usage :
 -------
@@ -145,11 +56,6 @@ Usage :
        --alert               check if trains have state
        --v                   verbose
 
-
-.. _Python3: https://www.python.org/downloads/
-.. _here: https://ressources.data.sncf.com/explore/dataset/api-temps-reel-transilien/
-.. _SMS Gateway: https://play.google.com/store/apps/details?id=eu.apksoft.android.smsgateway&hl=fr
-.. _Documentation: http://transilien-domoticz.readthedocs.io/
 
 .. |Licence| image:: https://img.shields.io/packagist/l/doctrine/orm.svg
 .. |Code Health| image:: https://landscape.io/github/matleses/Transilien-Domoticz/master/landscape.svg?style=flat
