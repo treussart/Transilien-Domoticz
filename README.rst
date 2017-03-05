@@ -30,13 +30,13 @@ Requirements
    days).
 -  (Optional) A cellphone with an IP fix, connected via WIFI (`SMS Gateway`_).
 
-Documentation :
----------------
+Documentation
+-------------
 
 Read the documentation on `http://transilien-domoticz.readthedocs.io/ <http://transilien-domoticz.readthedocs.io/>`_.
 
-Usage :
--------
+Usage
+-----
 
 ::
 
