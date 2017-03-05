@@ -167,3 +167,5 @@ texinfo_documents = [
 html_theme_options = {
     "collapse_navigation" : False
 }
+
+suppress_warnings = ['image.nonlocal_uri']
