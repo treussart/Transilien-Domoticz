@@ -8,3 +8,5 @@ htmlcov/
 _build
 _static
 _templates
+/Transilien_Domoticz/conf.cfg
+

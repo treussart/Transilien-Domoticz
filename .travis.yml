@@ -19,7 +19,9 @@ branches:
     - master
 
 # command to install dependencies
-install: pip3 install -r requirements.txt
+install:
+  - pip3 install -r test-requirements.txt
+  - pip3 install -r doc-requirements.txt
 
 before_script:
   - export PYTHONPATH=$PYTHONPATH:$(pwd)
@@ -27,3 +29,5 @@ before_script:
 # command to run tests
 script:
   - flake8 .
+  - cd docs
+  - make html
