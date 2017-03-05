@@ -30,4 +30,7 @@ before_script:
 script:
   - flake8 .
   - cd docs
+  - mkdir _static
+  - mkdir _build
+  - mkdir _templates
   - sphinx-build -W -b html -d _build/doctrees . _build/html
