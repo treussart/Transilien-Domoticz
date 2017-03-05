@@ -28,11 +28,11 @@ Requirements
 -  Domoticz.
 -  Login for API Transilien `here`_ (Requested by email, received in 3
    days).
--  (Optional) A cellphone with an IP fix, connected via WIFI (SMS
-   Gateway).
+-  (Optional) A cellphone with an IP fix, connected via WIFI (`SMS Gateway`_).
 
 
 Read the documentation on `http://transilien-domoticz.readthedocs.io/ <http://transilien-domoticz.readthedocs.io/>`_.
+
 
 Usage :
 -------
@@ -55,6 +55,11 @@ Usage :
        --gareName GARENAME   the arrival's station name
        --alert               check if trains have state
        --v                   verbose
+
+
+.. _Python3: https://www.python.org/downloads/
+.. _here: https://ressources.data.sncf.com/explore/dataset/api-temps-reel-transilien/
+.. _SMS Gateway: https://play.google.com/store/apps/details?id=eu.apksoft.android.smsgateway&hl=fr
 
 
 .. |Licence| image:: https://img.shields.io/packagist/l/doctrine/orm.svg
