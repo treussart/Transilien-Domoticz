@@ -54,7 +54,7 @@ Usage
        --departName DEPARTNAME
                              the departure's station name
        --gareName GARENAME   the arrival's station name
-       --alert               check if trains have state
+       --alert               check if trains have status
        --v                   verbose
 
 
