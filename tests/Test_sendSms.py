@@ -24,8 +24,10 @@ class TestSendSms(unittest.TestCase):
     values, state = format_content(nbr_trains, content, depart_name)
 
     def test_normal_with_one_number(self):
+        self.assertTrue(test_values(values))
         value = send_sms(host_sms, port_sms, password_sms, number, values)
         self.assertEqual("""<html>\n<body>\nMesage SENT!<br/>\n</body>\n</html>""", value[0].decode("utf-8"))
+        self.assertFalse(test_values(values)))
 
     def test_normal_with_two_numbers(self):
         value = send_sms(host_sms, port_sms, password_sms, [number[0], number[0]], values)
