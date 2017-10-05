@@ -3,7 +3,7 @@
 import unittest
 import os
 import configparser
-from Transilien_Domoticz.transilien import send_sms, format_content
+from Transilien_Domoticz.transilien import send_sms, format_content, test_values
 
 config_name = "conf.cfg"
 config_file = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir)) + "/Transilien_Domoticz/" + config_name
