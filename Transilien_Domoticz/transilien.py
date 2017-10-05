@@ -3,6 +3,7 @@
 """Get the french train schedules and its states, send SMS and send alert or text to Domoticz."""
 import sys
 import os
+import sqlite3
 import xml.etree.ElementTree as ET
 from urllib.parse import quote
 from urllib.error import URLError, HTTPError
@@ -235,6 +236,13 @@ def send_sms(host, port, password, number, values):
         return 'Problem with values: Empty'
     elif isinstance(values, (list, tuple)):
         for item in values:
+            conn = sqlite3.connect(os.path.dirname(os.path.abspath(__file__)) + '/values.db')
+            c = conn.cursor()
+            try:
+                c.execute("INSERT INTO item (event) VALUES ('%s')" % item)
+                conn.commit()
+            except sqlite3.IntegrityError:
+                pass
             value = value + item + ' '
     else:
         return 'Problem with values: need to be a list or a tuple'
@@ -253,6 +261,24 @@ def send_sms(host, port, password, number, values):
         else:
             return_value.append(response.read())
     return return_value
+
+
+# stock les valeurs pour ne pas envoyer 2 fois la même information
+def test_values(values):
+    test = True
+    for value in values:
+        if "Supprimé" in value or "Retardé" in value:
+            conn = sqlite3.connect(os.path.dirname(os.path.abspath(__file__)) + '/values.db')
+            c = conn.cursor()
+            # SELECT EXISTS(SELECT 1 FROM item WHERE event='%s' LIMIT 1) % value
+            c.execute("SELECT EXISTS(SELECT 1 FROM item WHERE event='%s')" % value)
+            data = c.fetchone()
+            if data[0] is 1:
+                test = False
+            else:
+                test = True
+                break
+    return test
 
 
 def transilien():
@@ -327,7 +353,8 @@ def transilien():
             if verbose:
                 print(response)
             if send_sms_value:
-                response = send_sms(host_sms, port_sms, password_sms, number, values)
+                if test_values(values):
+                    response = send_sms(host_sms, port_sms, password_sms, number, values)
                 if verbose:
                     print(response)
     else:
