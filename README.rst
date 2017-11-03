@@ -14,6 +14,7 @@ including with relevant alerts about last minute changes and updates?
 Well, you are in the right place now! Here is what you need to do:
 
 If you have a SMS gateway, you can send SMS.
+If you have an API Key of Pushbullet, you can send push notification.
 
 |warning|
 
@@ -26,6 +27,7 @@ Requirements
 
 -  `Python3`_.
 -  Domoticz.
+-  pushbullet.py
 -  Login for API Transilien `here`_ (Requested by email, received in 3
    days).
 -  (Optional) A cellphone with an IP fix, connected via WIFI (`SMS Gateway`_).
@@ -39,23 +41,24 @@ Usage
 -----
 
 ::
+      usage: transilien.py [-h] [--nbrTrains NBRTRAINS] [--depart DEPART]
+                           [--gare GARE] [--sendSMS] [--sendPush]
+                           [--departName DEPARTNAME] [--gareName GARENAME] [--alert]
+                           [--v]
 
-    usage: transilien.py [-h] [--nbrTrains NBRTRAINS] [--depart DEPART]
-                          [--gare GARE] [--sendSMS] [--departName DEPARTNAME]
-                          [--gareName GARENAME] [--alert] [--v]
-
-     optional arguments:
-       -h, --help            show this help message and exit
-       --nbrTrains NBRTRAINS
-                             the number of trains to check
-       --depart DEPART       the departure's station number
-       --gare GARE           the arrival's station number
-       --sendSMS             send a SMS
-       --departName DEPARTNAME
-                             the departure's station name
-       --gareName GARENAME   the arrival's station name
-       --alert               check if trains have status
-       --v                   verbose
+      optional arguments:
+        -h, --help            show this help message and exit
+        --nbrTrains NBRTRAINS
+                              the number of trains to check
+        --depart DEPART       the departure's station number
+        --gare GARE           the arrival's station number
+        --sendSMS             send a SMS
+        --sendPush            send a Push via Pushbullet
+        --departName DEPARTNAME
+                              the departure's station name
+        --gareName GARENAME   the arrival's station name
+        --alert               check if trains have state
+        --v                   verbose
 
 
 .. _Python3: https://www.python.org/downloads/
