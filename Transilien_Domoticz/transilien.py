@@ -309,6 +309,7 @@ def transilien():
     port_sms = config["sms"].getint('port')
     password_sms = config["sms"]["password"]
     number = config["sms"]["number"].split(',')
+    pushbullet_api = config["pushbullet"]["api"]
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--nbrTrains",
