@@ -10,6 +10,15 @@ from urllib.error import URLError, HTTPError
 import urllib.request
 import argparse
 import configparser
+from pushbullet import Pushbullet
+
+
+def send_notification(api, title, body):
+    pb = Pushbullet(api)
+    text = ""
+    for item in body:
+        text += str(item) + os.linesep
+    return pb.push_note(title, text)
 
 
 def get_train_infos(host_api, login, password, gare, depart):
@@ -316,6 +325,10 @@ def transilien():
                         help="send a SMS",
                         action='store_true',
                         default=config['default'].getboolean('sendSMS'))
+    parser.add_argument("--sendPush",
+                        help="send a Push via Pushbullet",
+                        action='store_true',
+                        default=config['default'].getboolean('sendPush'))
     parser.add_argument("--departName",
                         help="the departure's station  name ",
                         default=config["default"]["departName"])
@@ -339,6 +352,7 @@ def transilien():
     alert = args.alert
     verbose = args.v
     send_sms_value = args.sendSMS
+    send_push_value = args.sendPush
 
     if alert:
         content = get_train_infos(host_api, login, password, gare, depart)
@@ -352,11 +366,15 @@ def transilien():
             response = send_alert_to_domoticz(host, port, idx_alert, values, level)
             if verbose:
                 print(response)
-            if send_sms_value:
-                if test_values(values):
+            if test_values(values):
+                if send_sms_value:
                     response = send_sms(host_sms, port_sms, password_sms, number, values)
-                if verbose:
-                    print(response)
+                    if verbose:
+                        print(response)
+                if send_push_value:
+                    response = send_notification(pushbullet_api, "Transilien alert !", values)
+                    if verbose:
+                        print(response)
     else:
         go_content = get_train_infos(host_api, login, password, gare, depart)
         if verbose:
@@ -373,6 +391,10 @@ def transilien():
             print("send SMS : " + str(send_sms_value))
         if send_sms_value:
             response = send_sms(host_sms, port_sms, password_sms, number, values)
+            if verbose:
+                print(response)
+        if send_push_value:
+            response = send_notification(pushbullet_api, "Transilien", values)
             if verbose:
                 print(response)
     sys.exit(0)
