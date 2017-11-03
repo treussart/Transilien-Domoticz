@@ -21,6 +21,7 @@ branches:
 install:
   - pip install -r test-requirements.txt
   - pip install -r doc-requirements.txt
+  - pip install -r requirements.txt
 
 before_script:
   - export PYTHONPATH=$PYTHONPATH:$(pwd)
