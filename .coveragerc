@@ -1,3 +1,4 @@
 [report]
 omit =  tests/*.py
         .venv/*
+        venv/*
