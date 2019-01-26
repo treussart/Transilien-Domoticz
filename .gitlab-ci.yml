@@ -8,9 +8,9 @@ before_script:
   - pip install virtualenv
   - virtualenv venv
   - source venv/bin/activate
-  - pip3 install flake8
+  - pip3 install flake8 pushbullet lxml
 
 test:
   script:
   - flake8 .
-  - python3 -m unittest
+  - python3 -m unittest discover tests "Test_*.py"
